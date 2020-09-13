@@ -12,7 +12,7 @@ export default () => {
                 </div>
                 <div className="chatListItem--line">
                     <div className="chatListItem--lastMsg">
-                        <p>Opa, tudo bem?</p>
+                        <p>A live vai ficar gravada?</p>
                     </div>
                 
                 </div>
@@ -22,6 +22,7 @@ export default () => {
     );
 }
 /*
+https://icon-library.com/images/avatar-png-icon/avatar-png-icon-3.jpg
 https://images.emojiterra.com/google/android-10/512px/1f9d0.png
 https://www.w3schools.com/howto/img_avatar2.png
 https://cdn2.vectorstock.com/i/thumbs/98/11/girl-icon-flat-single-avatarpeaople-icon-from-vector-14449811.jpg

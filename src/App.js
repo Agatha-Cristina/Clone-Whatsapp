@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 
 import ChatListItem from './components/ChatListItem';
+import ChatIntro from './components/ChatIntro';
+import ChatWindow from './componets/ChatWindow';
 
 import DonutLargeIcon from '@material-ui/icons/DonutLarge';
 import ChatIcon from '@material-ui/icons/Chat';
@@ -10,7 +12,8 @@ import SearchIcon from '@material-ui/icons/Search';
 
 export default () => {
 
-const [chatlist, setChatList] = useState([{},{},{},{}]);
+  const [chatlist, setChatList] = useState([{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}]);
+  const [activeChat, setActiveChat] = useState({});
 
   return (
     <div className="app-window">
@@ -22,7 +25,7 @@ const [chatlist, setChatList] = useState([{},{},{},{}]);
           <div className="header--buttons">
 
             <div className="header--btn">
-                <DonutLargeIcon style={{ color: '#919191' }} />
+              <DonutLargeIcon style={{ color: '#919191' }} />
             </div>
 
             <div className="header--btn">
@@ -38,23 +41,28 @@ const [chatlist, setChatList] = useState([{},{},{},{}]);
 
         <div className="search">
           <div className="search--input">
-            <SearchIcon fontSize="small" style={{color: '#919191'}} />
+            <SearchIcon fontSize="small" style={{ color: '#919191' }} />
             <input type="search" placeholder="Procurar ou começar uma nova conversa" />
           </div>
         </div>
 
         <div className="chatlist">
           {chatlist.map((item, key) => (
-            <ChatListItem 
+            <ChatListItem
               key={key}
-
             />
           ))}
         </div>
 
       </div>
       <div className="contentarea">
-        ...
+        {activeChat.chatId !== undefined &&
+          <ChatWindow />
+        }
+        {activeChat.chatId === undefined &&
+          <ChatIntro />}
+
+        <ChatIntro />
       </div>
     </div>
   );
